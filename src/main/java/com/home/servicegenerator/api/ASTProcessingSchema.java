@@ -341,7 +341,7 @@ public interface ASTProcessingSchema {
         return (n, arg) -> n;
     }
     
-    default <N extends Node> BiFunction<NodeList<N>, Object, NodeList<N>> preProcessNodeList() {
+    default BiFunction<NodeList, Object, NodeList> preProcessNodeList() {
         return (n, arg) -> n;
     }
     
@@ -741,7 +741,7 @@ public interface ASTProcessingSchema {
         return (n, arg) -> n;
     }
 
-    default <N extends Node> BiFunction<NodeList<N>, Object, NodeList<N>> postProcessNodeList() {
+    default BiFunction<NodeList, Object, NodeList> postProcessNodeList() {
         return (n, arg) -> n;
     }
 
