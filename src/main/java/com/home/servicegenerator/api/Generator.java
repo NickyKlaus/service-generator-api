@@ -1,7 +1,8 @@
 package com.home.servicegenerator.api;
 
 import com.github.javaparser.ast.visitor.Visitable;
+import com.home.servicegenerator.api.context.Context;
 
-public interface Generator<R extends Visitable> {
-    R generate(final R baseUnit, final Object arg);
+public interface Generator {
+    Visitable generate(final Visitable baseUnit, final Context arg);
 }

@@ -9,808 +9,808 @@ import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.modules.*;
 import com.github.javaparser.ast.stmt.*;
 import com.github.javaparser.ast.type.*;
+import com.home.servicegenerator.api.context.Context;
 
 import java.util.function.BiFunction;
 
 public interface ASTProcessingSchema {
-    default BiFunction<CompilationUnit, Object, CompilationUnit> preProcessCompilationUnit() {
+    default BiFunction<CompilationUnit, Context, CompilationUnit> preProcessCompilationUnit() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<PackageDeclaration, Object, PackageDeclaration> preProcessPackageDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<TypeParameter, Object, TypeParameter> preProcessTypeParameter() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<LineComment, Object, LineComment> preProcessLineComment() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<BlockComment, Object, BlockComment> preProcessBlockComment() {
-        return (n ,arg) -> n;
-    }
-    
-    default BiFunction<ClassOrInterfaceDeclaration, Object, ClassOrInterfaceDeclaration> preProcessClassOrInterfaceDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<EnumDeclaration, Object, EnumDeclaration> preProcessEnumDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<EnumConstantDeclaration, Object, EnumConstantDeclaration> preProcessEnumConstantDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<AnnotationDeclaration, Object, AnnotationDeclaration> preProcessAnnotationDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<AnnotationMemberDeclaration, Object, AnnotationMemberDeclaration> preProcessAnnotationMemberDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<FieldDeclaration, Object, FieldDeclaration> preProcessFieldDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<VariableDeclarator, Object, VariableDeclarator> preProcessVariableDeclarator() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ConstructorDeclaration, Object, ConstructorDeclaration> preProcessConstructorDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<MethodDeclaration, Object, MethodDeclaration> preProcessMethodDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<Parameter, Object, Parameter> preProcessParameter() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<InitializerDeclaration, Object, InitializerDeclaration> preProcessInitializerDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<JavadocComment, Object, JavadocComment> preProcessJavadocComment() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ClassOrInterfaceType, Object, ClassOrInterfaceType> preProcessClassOrInterfaceType() {
-        return (n ,arg) -> n;
-    }
-    
-    default BiFunction<PrimitiveType, Object, PrimitiveType> preProcessPrimitiveType() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ArrayType, Object, ArrayType> preProcessArrayType() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ArrayCreationLevel, Object, ArrayCreationLevel> preProcessArrayCreationLevel() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<IntersectionType, Object, IntersectionType> preProcessIntersectionType() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<UnionType, Object, UnionType> preProcessUnionType() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<VoidType, Object, VoidType> preProcessVoidType() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<WildcardType, Object, WildcardType> preProcessWildcardType() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<UnknownType, Object, UnknownType> preProcessUnknownType() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ArrayAccessExpr, Object, ArrayAccessExpr> preProcessArrayAccessExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ArrayCreationExpr, Object, ArrayCreationExpr> preProcessArrayCreationExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ArrayInitializerExpr, Object, ArrayInitializerExpr> preProcessArrayInitializerExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<AssignExpr, Object, AssignExpr> preProcessAssignExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<BinaryExpr, Object, BinaryExpr> preProcessBinaryExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<CastExpr, Object, CastExpr> preProcessCastExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ClassExpr, Object, ClassExpr> preProcessClassExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ConditionalExpr, Object, ConditionalExpr> preProcessConditionalExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<EnclosedExpr, Object, EnclosedExpr> preProcessEnclosedExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<FieldAccessExpr, Object, FieldAccessExpr> preProcessFieldAccessExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<InstanceOfExpr, Object, InstanceOfExpr> preProcessInstanceOfExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<StringLiteralExpr, Object, StringLiteralExpr> preProcessStringLiteralExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<IntegerLiteralExpr, Object, IntegerLiteralExpr> preProcessIntegerLiteralExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<LongLiteralExpr, Object, LongLiteralExpr> preProcessLongLiteralExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<CharLiteralExpr, Object, CharLiteralExpr> preProcessCharLiteralExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<DoubleLiteralExpr, Object, DoubleLiteralExpr> preProcessDoubleLiteralExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<BooleanLiteralExpr, Object, BooleanLiteralExpr> preProcessBooleanLiteralExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<NullLiteralExpr, Object, NullLiteralExpr> preProcessNullLiteralExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<MethodCallExpr, Object, MethodCallExpr> preProcessMethodCallExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<NameExpr, Object, NameExpr> preProcessNameExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ObjectCreationExpr, Object, ObjectCreationExpr> preProcessObjectCreationExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<Name, Object, Name> preProcessName() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<SimpleName, Object, SimpleName> preProcessSimpleName() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ThisExpr, Object, ThisExpr> preProcessThisExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<SuperExpr, Object, SuperExpr> preProcessSuperExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<UnaryExpr, Object, UnaryExpr> preProcessUnaryExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<VariableDeclarationExpr, Object, VariableDeclarationExpr> preProcessVariableDeclarationExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<MarkerAnnotationExpr, Object, MarkerAnnotationExpr> preProcessMarkerAnnotationExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<SingleMemberAnnotationExpr, Object, SingleMemberAnnotationExpr> preProcessSingleMemberAnnotationExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<NormalAnnotationExpr, Object, NormalAnnotationExpr> preProcessNormalAnnotationExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<MemberValuePair, Object, MemberValuePair> preProcessMemberValuePair() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ExplicitConstructorInvocationStmt, Object, ExplicitConstructorInvocationStmt> preProcessExplicitConstructorInvocationStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<LocalClassDeclarationStmt, Object, LocalClassDeclarationStmt> preProcessLocalClassDeclarationStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<LocalRecordDeclarationStmt, Object, LocalRecordDeclarationStmt> preProcessLocalRecordDeclarationStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<AssertStmt, Object, AssertStmt> preProcessAssertStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<BlockStmt, Object, BlockStmt> preProcessBlockStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<LabeledStmt, Object, LabeledStmt> preProcessLabeledStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<EmptyStmt, Object, EmptyStmt> preProcessEmptyStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ExpressionStmt, Object, ExpressionStmt> preProcessExpressionStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<SwitchStmt, Object, SwitchStmt> preProcessSwitchStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<SwitchEntry, Object, SwitchEntry> preProcessSwitchEntry() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<BreakStmt, Object, BreakStmt> preProcessBreakStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ReturnStmt, Object, ReturnStmt> preProcessReturnStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<IfStmt, Object, IfStmt> preProcessIfStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<WhileStmt, Object, WhileStmt> preProcessWhileStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ContinueStmt, Object, ContinueStmt> preProcessContinueStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<DoStmt, Object, DoStmt> preProcessDoStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ForEachStmt, Object, ForEachStmt> preProcessForEachStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ForStmt, Object, ForStmt> preProcessForStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ThrowStmt, Object, ThrowStmt> preProcessThrowStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<SynchronizedStmt, Object, SynchronizedStmt> preProcessSynchronizedStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<TryStmt, Object, TryStmt> preProcessTryStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<CatchClause, Object, CatchClause> preProcessCatchClause() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<LambdaExpr, Object, LambdaExpr> preProcessLambdaExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<MethodReferenceExpr, Object, MethodReferenceExpr> preProcessMethodReferenceExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<TypeExpr, Object, TypeExpr> preProcessTypeExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<NodeList, Object, NodeList> preProcessNodeList() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ImportDeclaration, Object, Node> preProcessImportDeclaration() {
-        return (n, arg) -> (Node) n;
-    }
-    
-    default BiFunction<ModuleDeclaration, Object, ModuleDeclaration> preProcessModuleDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ModuleRequiresDirective, Object, ModuleRequiresDirective> preProcessModuleRequiresDirective() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ModuleExportsDirective, Object, ModuleExportsDirective> preProcessModuleExportsDirective() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ModuleProvidesDirective, Object, ModuleProvidesDirective> preProcessModuleProvidesDirective() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ModuleUsesDirective, Object, ModuleUsesDirective> preProcessModuleUsesDirective() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ModuleOpensDirective, Object, ModuleOpensDirective> preProcessModuleOpensDirective() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<UnparsableStmt, Object, UnparsableStmt> preProcessUnparsableStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<ReceiverParameter, Object, ReceiverParameter> preProcessReceiverParameter() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<VarType, Object, VarType> preProcessVarType() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<Modifier, Object, Modifier> preProcessModifier() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<SwitchExpr, Object, SwitchExpr> preProcessSwitchExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<YieldStmt, Object, YieldStmt> preProcessYieldStmt() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<TextBlockLiteralExpr, Object, TextBlockLiteralExpr> preProcessTextBlockLiteralExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<PatternExpr, Object, PatternExpr> preProcessPatternExpr() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<RecordDeclaration, Object, RecordDeclaration> preProcessRecordDeclaration() {
-        return (n, arg) -> n;
-    }
-    
-    default BiFunction<CompactConstructorDeclaration, Object, CompactConstructorDeclaration> preProcessCompactConstructorDeclaration() {
+    default BiFunction<PackageDeclaration, Context, PackageDeclaration> preProcessPackageDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<CompilationUnit, Object, CompilationUnit> postProcessCompilationUnit() {
+    default BiFunction<TypeParameter, Context, TypeParameter> preProcessTypeParameter() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<PackageDeclaration, Object, PackageDeclaration> postProcessPackageDeclaration() {
+    default BiFunction<LineComment, Context, LineComment> preProcessLineComment() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<TypeParameter, Object, TypeParameter> postProcessTypeParameter() {
-        return (n, arg) -> n;
-    }
-
-    default BiFunction<LineComment, Object, LineComment> postProcessLineComment() {
-        return (n, arg) -> n;
-    }
-
-    default BiFunction<BlockComment, Object, BlockComment> postProcessBlockComment() {
+    default BiFunction<BlockComment, Context, BlockComment> preProcessBlockComment() {
         return (n ,arg) -> n;
     }
 
-    default BiFunction<ClassOrInterfaceDeclaration, Object, ClassOrInterfaceDeclaration> postProcessClassOrInterfaceDeclaration() {
+    default BiFunction<ClassOrInterfaceDeclaration, Context, ClassOrInterfaceDeclaration> preProcessClassOrInterfaceDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<EnumDeclaration, Object, EnumDeclaration> postProcessEnumDeclaration() {
+    default BiFunction<EnumDeclaration, Context, EnumDeclaration> preProcessEnumDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<EnumConstantDeclaration, Object, EnumConstantDeclaration> postProcessEnumConstantDeclaration() {
+    default BiFunction<EnumConstantDeclaration, Context, EnumConstantDeclaration> preProcessEnumConstantDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<AnnotationDeclaration, Object, AnnotationDeclaration> postProcessAnnotationDeclaration() {
+    default BiFunction<AnnotationDeclaration, Context, AnnotationDeclaration> preProcessAnnotationDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<AnnotationMemberDeclaration, Object, AnnotationMemberDeclaration> postProcessAnnotationMemberDeclaration() {
+    default BiFunction<AnnotationMemberDeclaration, Context, AnnotationMemberDeclaration> preProcessAnnotationMemberDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<FieldDeclaration, Object, FieldDeclaration> postProcessFieldDeclaration() {
+    default BiFunction<FieldDeclaration, Context, FieldDeclaration> preProcessFieldDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<VariableDeclarator, Object, VariableDeclarator> postProcessVariableDeclarator() {
+    default BiFunction<VariableDeclarator, Context, VariableDeclarator> preProcessVariableDeclarator() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ConstructorDeclaration, Object, ConstructorDeclaration> postProcessConstructorDeclaration() {
+    default BiFunction<ConstructorDeclaration, Context, ConstructorDeclaration> preProcessConstructorDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<MethodDeclaration, Object, MethodDeclaration> postProcessMethodDeclaration() {
+    default BiFunction<MethodDeclaration, Context, MethodDeclaration> preProcessMethodDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<Parameter, Object, Parameter> postProcessParameter() {
+    default BiFunction<Parameter, Context, Parameter> preProcessParameter() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<InitializerDeclaration, Object, InitializerDeclaration> postProcessInitializerDeclaration() {
+    default BiFunction<InitializerDeclaration, Context, InitializerDeclaration> preProcessInitializerDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<JavadocComment, Object, JavadocComment> postProcessJavadocComment() {
+    default BiFunction<JavadocComment, Context, JavadocComment> preProcessJavadocComment() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ClassOrInterfaceType, Object, ClassOrInterfaceType> postProcessClassOrInterfaceType() {
+    default BiFunction<ClassOrInterfaceType, Context, ClassOrInterfaceType> preProcessClassOrInterfaceType() {
         return (n ,arg) -> n;
     }
 
-    default BiFunction<PrimitiveType, Object, PrimitiveType> postProcessPrimitiveType() {
+    default BiFunction<PrimitiveType, Context, PrimitiveType> preProcessPrimitiveType() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ArrayType, Object, ArrayType> postProcessArrayType() {
+    default BiFunction<ArrayType, Context, ArrayType> preProcessArrayType() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ArrayCreationLevel, Object, ArrayCreationLevel> postProcessArrayCreationLevel() {
+    default BiFunction<ArrayCreationLevel, Context, ArrayCreationLevel> preProcessArrayCreationLevel() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<IntersectionType, Object, IntersectionType> postProcessIntersectionType() {
+    default BiFunction<IntersectionType, Context, IntersectionType> preProcessIntersectionType() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<UnionType, Object, UnionType> postProcessUnionType() {
+    default BiFunction<UnionType, Context, UnionType> preProcessUnionType() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<VoidType, Object, VoidType> postProcessVoidType() {
+    default BiFunction<VoidType, Context, VoidType> preProcessVoidType() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<WildcardType, Object, WildcardType> postProcessWildcardType() {
+    default BiFunction<WildcardType, Context, WildcardType> preProcessWildcardType() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<UnknownType, Object, UnknownType> postProcessUnknownType() {
+    default BiFunction<UnknownType, Context, UnknownType> preProcessUnknownType() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ArrayAccessExpr, Object, ArrayAccessExpr> postProcessArrayAccessExpr() {
+    default BiFunction<ArrayAccessExpr, Context, ArrayAccessExpr> preProcessArrayAccessExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ArrayCreationExpr, Object, ArrayCreationExpr> postProcessArrayCreationExpr() {
+    default BiFunction<ArrayCreationExpr, Context, ArrayCreationExpr> preProcessArrayCreationExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ArrayInitializerExpr, Object, ArrayInitializerExpr> postProcessArrayInitializerExpr() {
+    default BiFunction<ArrayInitializerExpr, Context, ArrayInitializerExpr> preProcessArrayInitializerExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<AssignExpr, Object, AssignExpr> postProcessAssignExpr() {
+    default BiFunction<AssignExpr, Context, AssignExpr> preProcessAssignExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<BinaryExpr, Object, BinaryExpr> postProcessBinaryExpr() {
+    default BiFunction<BinaryExpr, Context, BinaryExpr> preProcessBinaryExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<CastExpr, Object, CastExpr> postProcessCastExpr() {
+    default BiFunction<CastExpr, Context, CastExpr> preProcessCastExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ClassExpr, Object, ClassExpr> postProcessClassExpr() {
+    default BiFunction<ClassExpr, Context, ClassExpr> preProcessClassExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ConditionalExpr, Object, ConditionalExpr> postProcessConditionalExpr() {
+    default BiFunction<ConditionalExpr, Context, ConditionalExpr> preProcessConditionalExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<EnclosedExpr, Object, EnclosedExpr> postProcessEnclosedExpr() {
+    default BiFunction<EnclosedExpr, Context, EnclosedExpr> preProcessEnclosedExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<FieldAccessExpr, Object, FieldAccessExpr> postProcessFieldAccessExpr() {
+    default BiFunction<FieldAccessExpr, Context, FieldAccessExpr> preProcessFieldAccessExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<InstanceOfExpr, Object, InstanceOfExpr> postProcessInstanceOfExpr() {
+    default BiFunction<InstanceOfExpr, Context, InstanceOfExpr> preProcessInstanceOfExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<StringLiteralExpr, Object, StringLiteralExpr> postProcessStringLiteralExpr() {
+    default BiFunction<StringLiteralExpr, Context, StringLiteralExpr> preProcessStringLiteralExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<IntegerLiteralExpr, Object, IntegerLiteralExpr> postProcessIntegerLiteralExpr() {
+    default BiFunction<IntegerLiteralExpr, Context, IntegerLiteralExpr> preProcessIntegerLiteralExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<LongLiteralExpr, Object, LongLiteralExpr> postProcessLongLiteralExpr() {
+    default BiFunction<LongLiteralExpr, Context, LongLiteralExpr> preProcessLongLiteralExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<CharLiteralExpr, Object, CharLiteralExpr> postProcessCharLiteralExpr() {
+    default BiFunction<CharLiteralExpr, Context, CharLiteralExpr> preProcessCharLiteralExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<DoubleLiteralExpr, Object, DoubleLiteralExpr> postProcessDoubleLiteralExpr() {
+    default BiFunction<DoubleLiteralExpr, Context, DoubleLiteralExpr> preProcessDoubleLiteralExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<BooleanLiteralExpr, Object, BooleanLiteralExpr> postProcessBooleanLiteralExpr() {
+    default BiFunction<BooleanLiteralExpr, Context, BooleanLiteralExpr> preProcessBooleanLiteralExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<NullLiteralExpr, Object, NullLiteralExpr> postProcessNullLiteralExpr() {
+    default BiFunction<NullLiteralExpr, Context, NullLiteralExpr> preProcessNullLiteralExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<MethodCallExpr, Object, MethodCallExpr> postProcessMethodCallExpr() {
+    default BiFunction<MethodCallExpr, Context, MethodCallExpr> preProcessMethodCallExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<NameExpr, Object, NameExpr> postProcessNameExpr() {
+    default BiFunction<NameExpr, Context, NameExpr> preProcessNameExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ObjectCreationExpr, Object, ObjectCreationExpr> postProcessObjectCreationExpr() {
+    default BiFunction<ObjectCreationExpr, Context, ObjectCreationExpr> preProcessObjectCreationExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<Name, Object, Name> postProcessName() {
+    default BiFunction<Name, Context, Name> preProcessName() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<SimpleName, Object, SimpleName> postProcessSimpleName() {
+    default BiFunction<SimpleName, Context, SimpleName> preProcessSimpleName() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ThisExpr, Object, ThisExpr> postProcessThisExpr() {
+    default BiFunction<ThisExpr, Context, ThisExpr> preProcessThisExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<SuperExpr, Object, SuperExpr> postProcessSuperExpr() {
+    default BiFunction<SuperExpr, Context, SuperExpr> preProcessSuperExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<UnaryExpr, Object, UnaryExpr> postProcessUnaryExpr() {
+    default BiFunction<UnaryExpr, Context, UnaryExpr> preProcessUnaryExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<VariableDeclarationExpr, Object, VariableDeclarationExpr> postProcessVariableDeclarationExpr() {
+    default BiFunction<VariableDeclarationExpr, Context, VariableDeclarationExpr> preProcessVariableDeclarationExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<MarkerAnnotationExpr, Object, MarkerAnnotationExpr> postProcessMarkerAnnotationExpr() {
+    default BiFunction<MarkerAnnotationExpr, Context, MarkerAnnotationExpr> preProcessMarkerAnnotationExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<SingleMemberAnnotationExpr, Object, SingleMemberAnnotationExpr> postProcessSingleMemberAnnotationExpr() {
+    default BiFunction<SingleMemberAnnotationExpr, Context, SingleMemberAnnotationExpr> preProcessSingleMemberAnnotationExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<NormalAnnotationExpr, Object, NormalAnnotationExpr> postProcessNormalAnnotationExpr() {
+    default BiFunction<NormalAnnotationExpr, Context, NormalAnnotationExpr> preProcessNormalAnnotationExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<MemberValuePair, Object, MemberValuePair> postProcessMemberValuePair() {
+    default BiFunction<MemberValuePair, Context, MemberValuePair> preProcessMemberValuePair() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ExplicitConstructorInvocationStmt, Object, ExplicitConstructorInvocationStmt> postProcessExplicitConstructorInvocationStmt() {
+    default BiFunction<ExplicitConstructorInvocationStmt, Context, ExplicitConstructorInvocationStmt> preProcessExplicitConstructorInvocationStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<LocalClassDeclarationStmt, Object, LocalClassDeclarationStmt> postProcessLocalClassDeclarationStmt() {
+    default BiFunction<LocalClassDeclarationStmt, Context, LocalClassDeclarationStmt> preProcessLocalClassDeclarationStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<LocalRecordDeclarationStmt, Object, LocalRecordDeclarationStmt> postProcessLocalRecordDeclarationStmt() {
+    default BiFunction<LocalRecordDeclarationStmt, Context, LocalRecordDeclarationStmt> preProcessLocalRecordDeclarationStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<AssertStmt, Object, AssertStmt> postProcessAssertStmt() {
+    default BiFunction<AssertStmt, Context, AssertStmt> preProcessAssertStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<BlockStmt, Object, BlockStmt> postProcessBlockStmt() {
+    default BiFunction<BlockStmt, Context, BlockStmt> preProcessBlockStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<LabeledStmt, Object, LabeledStmt> postProcessLabeledStmt() {
+    default BiFunction<LabeledStmt, Context, LabeledStmt> preProcessLabeledStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<EmptyStmt, Object, EmptyStmt> postProcessEmptyStmt() {
+    default BiFunction<EmptyStmt, Context, EmptyStmt> preProcessEmptyStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ExpressionStmt, Object, ExpressionStmt> postProcessExpressionStmt() {
+    default BiFunction<ExpressionStmt, Context, ExpressionStmt> preProcessExpressionStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<SwitchStmt, Object, SwitchStmt> postProcessSwitchStmt() {
+    default BiFunction<SwitchStmt, Context, SwitchStmt> preProcessSwitchStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<SwitchEntry, Object, SwitchEntry> postProcessSwitchEntry() {
+    default BiFunction<SwitchEntry, Context, SwitchEntry> preProcessSwitchEntry() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<BreakStmt, Object, BreakStmt> postProcessBreakStmt() {
+    default BiFunction<BreakStmt, Context, BreakStmt> preProcessBreakStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ReturnStmt, Object, ReturnStmt> postProcessReturnStmt() {
+    default BiFunction<ReturnStmt, Context, ReturnStmt> preProcessReturnStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<IfStmt, Object, IfStmt> postProcessIfStmt() {
+    default BiFunction<IfStmt, Context, IfStmt> preProcessIfStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<WhileStmt, Object, WhileStmt> postProcessWhileStmt() {
+    default BiFunction<WhileStmt, Context, WhileStmt> preProcessWhileStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ContinueStmt, Object, ContinueStmt> postProcessContinueStmt() {
+    default BiFunction<ContinueStmt, Context, ContinueStmt> preProcessContinueStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<DoStmt, Object, DoStmt> postProcessDoStmt() {
+    default BiFunction<DoStmt, Context, DoStmt> preProcessDoStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ForEachStmt, Object, ForEachStmt> postProcessForEachStmt() {
+    default BiFunction<ForEachStmt, Context, ForEachStmt> preProcessForEachStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ForStmt, Object, ForStmt> postProcessForStmt() {
+    default BiFunction<ForStmt, Context, ForStmt> preProcessForStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ThrowStmt, Object, ThrowStmt> postProcessThrowStmt() {
+    default BiFunction<ThrowStmt, Context, ThrowStmt> preProcessThrowStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<SynchronizedStmt, Object, SynchronizedStmt> postProcessSynchronizedStmt() {
+    default BiFunction<SynchronizedStmt, Context, SynchronizedStmt> preProcessSynchronizedStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<TryStmt, Object, TryStmt> postProcessTryStmt() {
+    default BiFunction<TryStmt, Context, TryStmt> preProcessTryStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<CatchClause, Object, CatchClause> postProcessCatchClause() {
+    default BiFunction<CatchClause, Context, CatchClause> preProcessCatchClause() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<LambdaExpr, Object, LambdaExpr> postProcessLambdaExpr() {
+    default BiFunction<LambdaExpr, Context, LambdaExpr> preProcessLambdaExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<MethodReferenceExpr, Object, MethodReferenceExpr> postProcessMethodReferenceExpr() {
+    default BiFunction<MethodReferenceExpr, Context, MethodReferenceExpr> preProcessMethodReferenceExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<TypeExpr, Object, TypeExpr> postProcessTypeExpr() {
+    default BiFunction<TypeExpr, Context, TypeExpr> preProcessTypeExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<NodeList, Object, NodeList> postProcessNodeList() {
+    default BiFunction<NodeList<?>, Context, NodeList<?>> preProcessNodeList() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ImportDeclaration, Object, Node> postProcessImportDeclaration() {
+    default BiFunction<ImportDeclaration, Context, Node> preProcessImportDeclaration() {
         return (n, arg) -> (Node) n;
     }
 
-    default BiFunction<ModuleDeclaration, Object, ModuleDeclaration> postProcessModuleDeclaration() {
+    default BiFunction<ModuleDeclaration, Context, ModuleDeclaration> preProcessModuleDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ModuleRequiresDirective, Object, ModuleRequiresDirective> postProcessModuleRequiresDirective() {
+    default BiFunction<ModuleRequiresDirective, Context, ModuleRequiresDirective> preProcessModuleRequiresDirective() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ModuleExportsDirective, Object, ModuleExportsDirective> postProcessModuleExportsDirective() {
+    default BiFunction<ModuleExportsDirective, Context, ModuleExportsDirective> preProcessModuleExportsDirective() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ModuleProvidesDirective, Object, ModuleProvidesDirective> postProcessModuleProvidesDirective() {
+    default BiFunction<ModuleProvidesDirective, Context, ModuleProvidesDirective> preProcessModuleProvidesDirective() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ModuleUsesDirective, Object, ModuleUsesDirective> postProcessModuleUsesDirective() {
+    default BiFunction<ModuleUsesDirective, Context, ModuleUsesDirective> preProcessModuleUsesDirective() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ModuleOpensDirective, Object, ModuleOpensDirective> postProcessModuleOpensDirective() {
+    default BiFunction<ModuleOpensDirective, Context, ModuleOpensDirective> preProcessModuleOpensDirective() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<UnparsableStmt, Object, UnparsableStmt> postProcessUnparsableStmt() {
+    default BiFunction<UnparsableStmt, Context, UnparsableStmt> preProcessUnparsableStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<ReceiverParameter, Object, ReceiverParameter> postProcessReceiverParameter() {
+    default BiFunction<ReceiverParameter, Context, ReceiverParameter> preProcessReceiverParameter() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<VarType, Object, VarType> postProcessVarType() {
+    default BiFunction<VarType, Context, VarType> preProcessVarType() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<Modifier, Object, Modifier> postProcessModifier() {
+    default BiFunction<Modifier, Context, Modifier> preProcessModifier() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<SwitchExpr, Object, SwitchExpr> postProcessSwitchExpr() {
+    default BiFunction<SwitchExpr, Context, SwitchExpr> preProcessSwitchExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<YieldStmt, Object, YieldStmt> postProcessYieldStmt() {
+    default BiFunction<YieldStmt, Context, YieldStmt> preProcessYieldStmt() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<TextBlockLiteralExpr, Object, TextBlockLiteralExpr> postProcessTextBlockLiteralExpr() {
+    default BiFunction<TextBlockLiteralExpr, Context, TextBlockLiteralExpr> preProcessTextBlockLiteralExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<PatternExpr, Object, PatternExpr> postProcessPatternExpr() {
+    default BiFunction<PatternExpr, Context, PatternExpr> preProcessPatternExpr() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<RecordDeclaration, Object, RecordDeclaration> postProcessRecordDeclaration() {
+    default BiFunction<RecordDeclaration, Context, RecordDeclaration> preProcessRecordDeclaration() {
         return (n, arg) -> n;
     }
 
-    default BiFunction<CompactConstructorDeclaration, Object, CompactConstructorDeclaration> postProcessCompactConstructorDeclaration() {
+    default BiFunction<CompactConstructorDeclaration, Context, CompactConstructorDeclaration> preProcessCompactConstructorDeclaration() {
         return (n, arg) -> n;
     }
 
+    default BiFunction<CompilationUnit, Context, CompilationUnit> postProcessCompilationUnit() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<PackageDeclaration, Context, PackageDeclaration> postProcessPackageDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<TypeParameter, Context, TypeParameter> postProcessTypeParameter() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<LineComment, Context, LineComment> postProcessLineComment() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<BlockComment, Context, BlockComment> postProcessBlockComment() {
+        return (n ,arg) -> n;
+    }
+
+    default BiFunction<ClassOrInterfaceDeclaration, Context, ClassOrInterfaceDeclaration> postProcessClassOrInterfaceDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<EnumDeclaration, Context, EnumDeclaration> postProcessEnumDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<EnumConstantDeclaration, Context, EnumConstantDeclaration> postProcessEnumConstantDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<AnnotationDeclaration, Context, AnnotationDeclaration> postProcessAnnotationDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<AnnotationMemberDeclaration, Context, AnnotationMemberDeclaration> postProcessAnnotationMemberDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<FieldDeclaration, Context, FieldDeclaration> postProcessFieldDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<VariableDeclarator, Context, VariableDeclarator> postProcessVariableDeclarator() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ConstructorDeclaration, Context, ConstructorDeclaration> postProcessConstructorDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<MethodDeclaration, Context, MethodDeclaration> postProcessMethodDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<Parameter, Context, Parameter> postProcessParameter() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<InitializerDeclaration, Context, InitializerDeclaration> postProcessInitializerDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<JavadocComment, Context, JavadocComment> postProcessJavadocComment() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ClassOrInterfaceType, Context, ClassOrInterfaceType> postProcessClassOrInterfaceType() {
+        return (n ,arg) -> n;
+    }
+
+    default BiFunction<PrimitiveType, Context, PrimitiveType> postProcessPrimitiveType() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ArrayType, Context, ArrayType> postProcessArrayType() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ArrayCreationLevel, Context, ArrayCreationLevel> postProcessArrayCreationLevel() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<IntersectionType, Context, IntersectionType> postProcessIntersectionType() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<UnionType, Context, UnionType> postProcessUnionType() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<VoidType, Context, VoidType> postProcessVoidType() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<WildcardType, Context, WildcardType> postProcessWildcardType() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<UnknownType, Context, UnknownType> postProcessUnknownType() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ArrayAccessExpr, Context, ArrayAccessExpr> postProcessArrayAccessExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ArrayCreationExpr, Context, ArrayCreationExpr> postProcessArrayCreationExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ArrayInitializerExpr, Context, ArrayInitializerExpr> postProcessArrayInitializerExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<AssignExpr, Context, AssignExpr> postProcessAssignExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<BinaryExpr, Context, BinaryExpr> postProcessBinaryExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<CastExpr, Context, CastExpr> postProcessCastExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ClassExpr, Context, ClassExpr> postProcessClassExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ConditionalExpr, Context, ConditionalExpr> postProcessConditionalExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<EnclosedExpr, Context, EnclosedExpr> postProcessEnclosedExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<FieldAccessExpr, Context, FieldAccessExpr> postProcessFieldAccessExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<InstanceOfExpr, Context, InstanceOfExpr> postProcessInstanceOfExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<StringLiteralExpr, Context, StringLiteralExpr> postProcessStringLiteralExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<IntegerLiteralExpr, Context, IntegerLiteralExpr> postProcessIntegerLiteralExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<LongLiteralExpr, Context, LongLiteralExpr> postProcessLongLiteralExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<CharLiteralExpr, Context, CharLiteralExpr> postProcessCharLiteralExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<DoubleLiteralExpr, Context, DoubleLiteralExpr> postProcessDoubleLiteralExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<BooleanLiteralExpr, Context, BooleanLiteralExpr> postProcessBooleanLiteralExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<NullLiteralExpr, Context, NullLiteralExpr> postProcessNullLiteralExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<MethodCallExpr, Context, MethodCallExpr> postProcessMethodCallExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<NameExpr, Context, NameExpr> postProcessNameExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ObjectCreationExpr, Context, ObjectCreationExpr> postProcessObjectCreationExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<Name, Context, Name> postProcessName() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<SimpleName, Context, SimpleName> postProcessSimpleName() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ThisExpr, Context, ThisExpr> postProcessThisExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<SuperExpr, Context, SuperExpr> postProcessSuperExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<UnaryExpr, Context, UnaryExpr> postProcessUnaryExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<VariableDeclarationExpr, Context, VariableDeclarationExpr> postProcessVariableDeclarationExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<MarkerAnnotationExpr, Context, MarkerAnnotationExpr> postProcessMarkerAnnotationExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<SingleMemberAnnotationExpr, Context, SingleMemberAnnotationExpr> postProcessSingleMemberAnnotationExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<NormalAnnotationExpr, Context, NormalAnnotationExpr> postProcessNormalAnnotationExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<MemberValuePair, Context, MemberValuePair> postProcessMemberValuePair() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ExplicitConstructorInvocationStmt, Context, ExplicitConstructorInvocationStmt> postProcessExplicitConstructorInvocationStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<LocalClassDeclarationStmt, Context, LocalClassDeclarationStmt> postProcessLocalClassDeclarationStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<LocalRecordDeclarationStmt, Context, LocalRecordDeclarationStmt> postProcessLocalRecordDeclarationStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<AssertStmt, Context, AssertStmt> postProcessAssertStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<BlockStmt, Context, BlockStmt> postProcessBlockStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<LabeledStmt, Context, LabeledStmt> postProcessLabeledStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<EmptyStmt, Context, EmptyStmt> postProcessEmptyStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ExpressionStmt, Context, ExpressionStmt> postProcessExpressionStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<SwitchStmt, Context, SwitchStmt> postProcessSwitchStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<SwitchEntry, Context, SwitchEntry> postProcessSwitchEntry() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<BreakStmt, Context, BreakStmt> postProcessBreakStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ReturnStmt, Context, ReturnStmt> postProcessReturnStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<IfStmt, Context, IfStmt> postProcessIfStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<WhileStmt, Context, WhileStmt> postProcessWhileStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ContinueStmt, Context, ContinueStmt> postProcessContinueStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<DoStmt, Context, DoStmt> postProcessDoStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ForEachStmt, Context, ForEachStmt> postProcessForEachStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ForStmt, Context, ForStmt> postProcessForStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ThrowStmt, Context, ThrowStmt> postProcessThrowStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<SynchronizedStmt, Context, SynchronizedStmt> postProcessSynchronizedStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<TryStmt, Context, TryStmt> postProcessTryStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<CatchClause, Context, CatchClause> postProcessCatchClause() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<LambdaExpr, Context, LambdaExpr> postProcessLambdaExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<MethodReferenceExpr, Context, MethodReferenceExpr> postProcessMethodReferenceExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<TypeExpr, Context, TypeExpr> postProcessTypeExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<NodeList<?>, Context, NodeList<?>> postProcessNodeList() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ImportDeclaration, Context, Node> postProcessImportDeclaration() {
+        return (n, arg) -> (Node) n;
+    }
+
+    default BiFunction<ModuleDeclaration, Context, ModuleDeclaration> postProcessModuleDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ModuleRequiresDirective, Context, ModuleRequiresDirective> postProcessModuleRequiresDirective() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ModuleExportsDirective, Context, ModuleExportsDirective> postProcessModuleExportsDirective() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ModuleProvidesDirective, Context, ModuleProvidesDirective> postProcessModuleProvidesDirective() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ModuleUsesDirective, Context, ModuleUsesDirective> postProcessModuleUsesDirective() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ModuleOpensDirective, Context, ModuleOpensDirective> postProcessModuleOpensDirective() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<UnparsableStmt, Context, UnparsableStmt> postProcessUnparsableStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<ReceiverParameter, Context, ReceiverParameter> postProcessReceiverParameter() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<VarType, Context, VarType> postProcessVarType() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<Modifier, Context, Modifier> postProcessModifier() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<SwitchExpr, Context, SwitchExpr> postProcessSwitchExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<YieldStmt, Context, YieldStmt> postProcessYieldStmt() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<TextBlockLiteralExpr, Context, TextBlockLiteralExpr> postProcessTextBlockLiteralExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<PatternExpr, Context, PatternExpr> postProcessPatternExpr() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<RecordDeclaration, Context, RecordDeclaration> postProcessRecordDeclaration() {
+        return (n, arg) -> n;
+    }
+
+    default BiFunction<CompactConstructorDeclaration, Context, CompactConstructorDeclaration> postProcessCompactConstructorDeclaration() {
+        return (n, arg) -> n;
+    }
 }
