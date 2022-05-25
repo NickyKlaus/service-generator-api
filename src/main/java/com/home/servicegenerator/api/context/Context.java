@@ -9,6 +9,14 @@ public interface Context {
     Map<String, Object> getProperties();
     Optional<Object> getPropertyByName(String name);
 
+    default <T> T get(String name, Class<T> cls) throws IllegalArgumentException {
+        var object = getPropertyByName(name);
+        if (object.isPresent() && object.get().getClass().isAssignableFrom(cls)) {
+            return cls.cast(object.get());
+        }
+        throw new IllegalArgumentException(name + " is not set");
+    }
+
     static Collection<Property> requireNonNullValues(
             final Collection<Property> properties,
             final String errorMessage
