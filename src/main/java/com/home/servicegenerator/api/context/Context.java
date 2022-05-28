@@ -11,8 +11,17 @@ public interface Context {
 
     default <T> T get(String name, Class<T> cls) throws IllegalArgumentException {
         var object = getPropertyByName(name);
-        if (object.isPresent() && object.get().getClass().isAssignableFrom(cls)) {
-            return cls.cast(object.get());
+        if (object.isPresent()) {
+            if (
+                    ( object.get() instanceof Enum<?> &&
+                            ((Enum<?>) object.get())
+                                    .getDeclaringClass()
+                                    .getCanonicalName()
+                                    .equals(cls.getCanonicalName()) ) ||
+                            ( object.get().getClass().isAssignableFrom(cls) )
+            ) {
+                return cls.cast(object.get());
+            }
         }
         throw new IllegalArgumentException(name + " is not set");
     }
