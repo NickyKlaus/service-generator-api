@@ -1,4 +1,4 @@
-package com.home.servicegenerator.api;
+package com.home.origami.api;
 
 import com.github.javaparser.ast.*;
 import com.github.javaparser.ast.body.*;
@@ -9,7 +9,7 @@ import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.modules.*;
 import com.github.javaparser.ast.stmt.*;
 import com.github.javaparser.ast.type.*;
-import com.home.servicegenerator.api.context.Context;
+import com.home.origami.api.context.Context;
 
 import java.util.function.BiFunction;
 

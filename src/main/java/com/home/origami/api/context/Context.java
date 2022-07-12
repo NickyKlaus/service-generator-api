@@ -1,4 +1,4 @@
-package com.home.servicegenerator.api.context;
+package com.home.origami.api.context;
 
 import java.util.Collection;
 import java.util.Map;
