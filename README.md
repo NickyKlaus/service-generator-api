@@ -1,6 +1,8 @@
 # origami-api
 Standard API for **Origami plugin**
 
+[![](https://jitpack.io/v/NickyKlaus/origami-api.svg)](https://jitpack.io/#NickyKlaus/origami-api)
+
 Implement *ASTProcessingSchema* to declare the changes in AST of the source code and use them in **Origami plugin** as your own external processing schemas.
 
 You can also use *Context* and *Property* to share the data between **Origami** processing schemas.
