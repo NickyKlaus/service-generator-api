@@ -8,3 +8,30 @@ Implement *ASTProcessingSchema* to declare the changes in AST of the source code
 You can also use *Context* and *Property* to share the data between **Origami** processing schemas.
 
 *Generator* interface provides the ability to create a Java-based representation of the AST according to the processing schema. 
+
+Add JitPack repository to your project POM 
+
+```
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+```
+
+and then just add *origami-api* dependency
+
+```
+<dependency>
+    <groupId>com.github.NickyKlaus</groupId>
+    <artifactId>origami-api</artifactId>
+    <version>${origami-api.version}</version>
+</dependency>
+```
