@@ -10,7 +10,19 @@ You can also use *Context* and *Property* to share the data between **Origami** 
 
 *Generator* interface provides the ability to create a Java-based representation of the AST according to the processing schema. 
 
-Add repository to your project POM 
+Register server in Maven `settings.xml`
+
+```
+<servers>
+  <server>
+    <id>github</id>
+    <username>${env.GITHUB_USERNAME}</username>
+    <password>${env.GITHUB_TOKEN}</password>
+  </server>
+</servers>
+```
+
+add repository to your project POM 
 
 ```
 <distributionManagement>
