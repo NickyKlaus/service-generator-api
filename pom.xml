@@ -10,11 +10,9 @@
 
     <distributionManagement>
         <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>jitpack.io</id>
-            <name>jitpack.io</name>
-            <url>https://jitpack.io/#NickyKlaus/origami-api</url>
-            <layout>default</layout>
+            <id>github</id>
+            <name>GitHub Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/NickyKlaus/origami-api</url>
         </repository>
     </distributionManagement>
 
