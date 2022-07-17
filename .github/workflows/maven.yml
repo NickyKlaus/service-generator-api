@@ -1,9 +1,11 @@
 name: Publish package
 on:
-  release:
-    types: [released, prereleased, published, created, edited]
-    tags:
-      - v*
+  push:
+    branches: [ "plugin-dev" ]
+  pull_request:
+    branches: [ "plugin-dev" ]
+  schedule:
+    - cron: '0 19 * * 0'
   
 jobs:
   publish:
@@ -45,20 +47,6 @@ jobs:
           MAVEN_USERNAME: nickyklaus
           MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
-        
-      #- name: Set up Java for publishing to Maven Central Repository
-      #  uses: actions/setup-java@v3
-      #  with:
-      #    java-version: '11'
-      #    distribution: 'adopt'
-      #    server-id: ossrh
-      #    server-username: MAVEN_USERNAME
-      #    server-password: MAVEN_PASSWORD
-      #- name: Publish to the Maven Central Repository
-      #  run: mvn --batch-mode deploy
-      #  env:
-      #    MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-      #    MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
       
       - uses: actions/checkout@v3
       - name: Set up Java for publishing to GitHub Packages
@@ -75,13 +63,3 @@ jobs:
         run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
-      
-      #- name: Set up Java for publishing to GitHub Packages
-      #  uses: actions/setup-java@v3
-      #  with:
-      #    java-version: '11'
-      #    distribution: 'adopt'
-      #- name: Publish to GitHub Packages
-      #  run: mvn --batch-mode deploy -s $GITHUB_WORKSPACE/settings.xml
-      #  env:
-      #    GITHUB_TOKEN: ${{ github.token }}
