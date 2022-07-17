@@ -25,8 +25,8 @@ and then just add *origami-api* dependency
 
 ```
 <dependency>
-    <groupId>com.github.NickyKlaus</groupId>
-    <artifactId>origami-api</artifactId>
-    <version>${origami-api.version}</version>
+  <groupId>com.home</groupId>
+  <artifactId>origami-api</artifactId>
+  <version>${origami-api.version}</version>
 </dependency>
 ```
