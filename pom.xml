@@ -11,9 +11,9 @@
     <distributionManagement>
         <repository>
             <uniqueVersion>false</uniqueVersion>
-            <id>origami-api</id>
-            <name>Origami Api</name>
-            <url>https://jitpack.io/#NickyKlaus/origami-api</url>
+            <id>jitpack.io</id>
+            <name>jitpack.io</name>
+            <url>https://jitpack.io</url>
             <layout>default</layout>
         </repository>
     </distributionManagement>
