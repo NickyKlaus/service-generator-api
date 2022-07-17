@@ -6,6 +6,9 @@ on:
     branches: [master]
   release:
     types: [released, prereleased, published, created, edited]
+    tags:
+      - v*
+  
 jobs:
   publish:
     runs-on: ubuntu-latest 
