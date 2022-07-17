@@ -13,7 +13,7 @@
             <uniqueVersion>false</uniqueVersion>
             <id>jitpack.io</id>
             <name>jitpack.io</name>
-            <url>https://jitpack.io</url>
+            <url>https://jitpack.io/#NickyKlaus/origami-api</url>
             <layout>default</layout>
         </repository>
     </distributionManagement>
