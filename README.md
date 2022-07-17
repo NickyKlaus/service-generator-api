@@ -1,7 +1,6 @@
 # origami-api
 Standard API for **Origami plugin**
 
-[![](https://jitpack.io/v/NickyKlaus/origami-api.svg)](https://jitpack.io/#NickyKlaus/origami-api)
 [![Java CI with Maven](https://github.com/NickyKlaus/origami-api/actions/workflows/maven.yml/badge.svg)](https://github.com/NickyKlaus/origami-api/actions/workflows/maven.yml)
 
 Implement *ASTProcessingSchema* to declare the changes in AST of the source code and use them in **Origami plugin** as your own external processing schemas.
