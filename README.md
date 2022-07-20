@@ -26,10 +26,10 @@ add repository to your project POM
 
 ```
 <repository>
-    <id>github</id>
-    <name>GitHub Apache Maven Packages</name>
-    <url>https://maven.pkg.github.com/NickyKlaus/origami-api</url>
-  </repository>
+  <id>github</id>
+  <name>GitHub Apache Maven Packages</name>
+  <url>https://maven.pkg.github.com/NickyKlaus/origami-api</url>
+</repository>
 ```
 
 and then just add *origami-api* dependency
