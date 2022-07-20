@@ -6,15 +6,47 @@
 
     <groupId>com.home</groupId>
     <artifactId>origami-api</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 
-    <distributionManagement>
+    <profiles>
+        <profile>
+            <id>no2-v4</id>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>https://repo1.maven.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub Apache Maven Packages</name>
+                    <url>https://maven.pkg.github.com/NickyKlaus/origami-api</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+    <!--<distributionManagement>
         <repository>
             <id>github</id>
             <name>GitHub Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/NickyKlaus/origami-api</url>
         </repository>
-    </distributionManagement>
+    </distributionManagement>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

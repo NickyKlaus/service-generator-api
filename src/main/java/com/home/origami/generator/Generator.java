@@ -1,4 +1,4 @@
-package com.home.origami.api;
+package com.home.origami.generator;
 
 import com.github.javaparser.ast.visitor.Visitable;
 import com.home.origami.api.context.Context;

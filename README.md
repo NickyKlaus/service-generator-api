@@ -12,13 +12,11 @@ You can also use *Context* and *Property* to share the data between **Origami** 
 Add repository to your project POM 
 
 ```
-<distributionManagement>
-  <repository>
+<repository>
     <id>github</id>
     <name>GitHub Apache Maven Packages</name>
     <url>https://maven.pkg.github.com/NickyKlaus/origami-api</url>
   </repository>
-</distributionManagement>
 ```
 
 and then just add *origami-api* dependency
