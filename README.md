@@ -10,7 +10,7 @@ You can also use *Context* and *Property* to share the data between **Origami** 
 
 *Generator* interface provides the ability to create a Java-based representation of the AST according to the processing schema. 
 
-Register server in Maven `settings.xml`
+To use **Origami-api** in your project register server in Maven `settings.xml`
 
 ```
 <servers>
