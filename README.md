@@ -43,4 +43,4 @@ and then just add `origami-api` dependency
 </dependency>
 ```
 
-**Origami-api** uses the [!Abstract Syntax Tree()] provided by [![Javaparser](https://javaparser.org/img/jp-logo.png "Javaparser")](https://github.com/javaparser/javaparser/tree/master/javaparser-core/src/main/java/com/github/javaparser/ast)
+**Origami-api** uses the [Abstract Syntax Tree](https://github.com/javaparser/javaparser/tree/master/javaparser-core/src/main/java/com/github/javaparser/ast) provided by [![Javaparser](https://javaparser.org/img/jp-logo.png "Javaparser")](https://javaparser.org)
