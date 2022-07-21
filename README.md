@@ -4,11 +4,12 @@
 
 **Origami** Maven plugin API
 
-Implement *ASTProcessingSchema* to declare the changes in AST of the source code and use them in **Origami plugin** as your own external processing schemas.
+Implement `ASTProcessingSchema` to declare the changes in AST of the source code and use them in **Origami** plugin as your own external processing schemas.
 
-You can also use *Context* and *Property* to share the data between **Origami** processing schemas.
+You can also use `Context` and `Property` to share the data between **Origami** processing schemas.
 
-*Generator* interface provides the ability to create a Java-based representation of the AST according to the processing schema. 
+`Generator` interface allows to create the Abstract Syntax Tree of generated source code according to the processing schema.
+**Origami-api** also provides default implementation of `Generator` to create and test processing schemas outside the **Origami** Maven plugin. 
 
 To use **Origami-api** in your project register server in Maven `settings.xml`
 
@@ -32,7 +33,7 @@ add repository to your project POM
 </repository>
 ```
 
-and then just add *origami-api* dependency
+and then just add `origami-api` dependency
 
 ```
 <dependency>
@@ -41,3 +42,5 @@ and then just add *origami-api* dependency
   <version>${origami-api.version}</version>
 </dependency>
 ```
+
+**Origami-api** uses the [!Abstract Syntax Tree()] provided by [![Javaparser](https://javaparser.org/img/jp-logo.png "Javaparser")](https://github.com/javaparser/javaparser/tree/master/javaparser-core/src/main/java/com/github/javaparser/ast)
