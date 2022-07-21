@@ -2,16 +2,16 @@
 
 [![Java CI with Maven](https://github.com/NickyKlaus/origami-api/actions/workflows/maven.yml/badge.svg)](https://github.com/NickyKlaus/origami-api/actions/workflows/maven.yml)
 
-**[Origami](https://github.com/NickyKlaus/origami)** Maven plugin API
+**[Origami](https://nickyklaus.github.io/origami/)** Maven plugin API
 
-Implement `ASTProcessingSchema` to declare the changes in AST of the source code and use them in **[Origami](https://github.com/NickyKlaus/origami)** plugin as your own external processing schemas.
+Implement `ASTProcessingSchema` to declare the changes in AST of the source code and use them in Origami plugin as your own external processing schemas.
 
-You can also use `Context` and `Property` to share the data between **Origami** processing schemas.
+You can also use `Context` and `Property` to share the data between Origami processing schemas.
 
 `Generator` interface allows to create the Abstract Syntax Tree of generated source code according to the processing schema.
-**Origami-api** also provides a default implementation of `Generator` to create and test processing schemas outside the **Origami** plugin. 
+This API also provides a default implementation of `Generator` to create and test processing schemas outside the Origami plugin. 
 
-To use **Origami-api** in your project register server in Maven `settings.xml`
+To use **origami-api** in your project register server in Maven `settings.xml`
 
 ```
 <servers>
