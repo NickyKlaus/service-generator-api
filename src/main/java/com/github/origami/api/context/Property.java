@@ -1,4 +1,4 @@
-package com.nickyklaus.origami.api.context;
+package com.github.origami.api.context;
 
 public interface Property {
     String getName();

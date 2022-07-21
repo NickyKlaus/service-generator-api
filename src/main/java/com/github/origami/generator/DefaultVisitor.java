@@ -1,4 +1,4 @@
-package com.nickyklaus.origami.generator;
+package com.github.origami.generator;
 
 import com.github.javaparser.ast.ArrayCreationLevel;
 import com.github.javaparser.ast.CompilationUnit;
@@ -102,8 +102,8 @@ import com.github.javaparser.ast.type.VarType;
 import com.github.javaparser.ast.type.VoidType;
 import com.github.javaparser.ast.type.WildcardType;
 import com.github.javaparser.ast.visitor.*;
-import com.nickyklaus.origami.api.ASTProcessingSchema;
-import com.nickyklaus.origami.api.context.Context;
+import com.github.origami.api.ASTProcessingSchema;
+import com.github.origami.api.context.Context;
 
 /**
  * Visitor goes around Abstract Syntax Tree nodes of the base class, processes them (applies a processing action)

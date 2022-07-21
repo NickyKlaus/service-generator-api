@@ -1,4 +1,4 @@
-package com.nickyklaus.origami.api;
+package com.github.origami.api;
 
 import com.github.javaparser.ast.*;
 import com.github.javaparser.ast.body.*;
@@ -9,7 +9,7 @@ import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.modules.*;
 import com.github.javaparser.ast.stmt.*;
 import com.github.javaparser.ast.type.*;
-import com.nickyklaus.origami.api.context.Context;
+import com.github.origami.api.context.Context;
 
 import java.util.function.BiFunction;
 
