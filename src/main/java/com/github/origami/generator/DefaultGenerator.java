@@ -1,9 +1,9 @@
-package com.nickyklaus.origami.generator;
+package com.github.origami.generator;
 
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.visitor.Visitable;
-import com.nickyklaus.origami.api.ASTProcessingSchema;
-import com.nickyklaus.origami.api.context.Context;
+import com.github.origami.api.ASTProcessingSchema;
+import com.github.origami.api.context.Context;
 
 /**
  * Generates special representation of all Abstract Syntax Tree nodes of implementation class using the base class as

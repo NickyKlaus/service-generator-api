@@ -37,7 +37,7 @@ and then just add `origami-api` dependency
 
 ```
 <dependency>
-  <groupId>com.nickyklaus</groupId>
+  <groupId>com.github</groupId>
   <artifactId>origami-api</artifactId>
   <version>${origami-api.version}</version>
 </dependency>

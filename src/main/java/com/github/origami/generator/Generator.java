@@ -1,7 +1,7 @@
-package com.nickyklaus.origami.generator;
+package com.github.origami.generator;
 
 import com.github.javaparser.ast.visitor.Visitable;
-import com.nickyklaus.origami.api.context.Context;
+import com.github.origami.api.context.Context;
 
 public interface Generator {
     Visitable generate(final Visitable baseUnit, final Context arg);
